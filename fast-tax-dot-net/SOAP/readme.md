@@ -24,30 +24,30 @@ If the MatchLevel returned is “Zip” then this operation can also return mult
 
 ```
 // 1 Instantiate the service wrapper
+string IsLive = true;
 GetBestMatchValidation getBestMatchValidation = new(true);
 
 // 2 Provide your input data
 //  Required fields:
+//               Address
+//               Address2
+//               State
+//               City
+//               Zip
+//               TaxType	
 //               LicenseKey
 //               IsLive
-// 
-// Optional:
-//        Address
-//        Address2
-//        State
-//        City
-//        Zip
-//        TaxType	
-//        TimeoutSeconds (default: 15)
+
 string Address = "27 E Cota St";
 string Address2 = "";
 string City = "Santa Barbara";
 string State = "CA";
 string Zip = "93101";
 string TaxType = "sales";
+string LicenseKey = "YOUR LICENSE KEY";
 
 // 3 Call the service
-BestMatchResponse response = getBestMatchValidation.GetBestMatch(Address, Address2, City, State, Zip, TaxType, licenseKey).Result;
+BestMatchResponse response = getBestMatchValidation.GetBestMatch(Address, Address2, City, State, Zip, TaxType, LicenseKey).Result;
 
 // 4. Inspect results.
 if (response.Error is null)

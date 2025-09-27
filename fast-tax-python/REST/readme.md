@@ -26,30 +26,31 @@ If the MatchLevel returned is “Zip” then this operation can also return mult
 // 1. Build the input
 //
 //  Required fields:
-//               LicenseKey
-//               IsLive
+//               address
+//               address2
+//               state
+//               city
+//               zip
+//               license_key
+//               is_live
 // 
 // Optional:
-//        Address
-//        Address2
-//        State
-//        City
-//        Zip
-//        TaxType	
-//        TimeoutSeconds (default: 15)
+
+//        tax_type	
 
 from get_best_match_rest import get_best_match
 
-address = "27 E Cota St";
-address2 = "";
-city = "Santa Barbara";
-state = "CA";
-zip = "93101";
-taxType = "sales";
-timeoutSeconds = 15;
+address = "27 E Cota St"
+address2 = ""
+city = "Santa Barbara"
+state = "CA"
+zip = "93101"
+tax_type = "sales"
+is_live = False
+license_key = "YOUR LICENSE KEY"
 
 // 2. Call the method.
- response = get_best_match(address, address2, city, state, zip, tax_type, license_key, is_live)
+response = get_best_match(address, address2, city, state, zip, tax_type, license_key, is_live)
 
 // 3. Inspect results.
 console.log("\n* Tax Info *\n");

@@ -26,27 +26,29 @@ If the MatchLevel returned is “Zip” then this operation can also return mult
 // 1. Build the input
 //
 //  Required fields:
-//               LicenseKey
-//               IsLive
+//               address
+//               address2
+//               state
+//               city
+//               zip
+//               taxType
+//               licenseKey
+//               isLive
 // 
 // Optional:
-//        Address
-//        Address2
-//        State
-//        City
-//        Zip
-//        TaxType	
-//        TimeoutSeconds (default: 15)
+//        timeoutSeconds
 
 import { GetBestMatchClient } from '../fast-tax-nodejs/REST/get_best_match_rest.js';
 
-const address = "42083 County Road 161";
+const address = "27 E Cota St";
 const address2 = "";
-const city = "Agate";
-const state = "CO";
-const zip = "80101";
+const city = "Santa Barbara";
+const state = "CA";
+const zip = "93101";
 const taxType = "sales";
 const timeoutSeconds = 15;
+const isLive = true;
+const licenseKey = "YOUR LICENSE KEY";
 
 // 2. Call the sync Invoke() method.
  const response = await GetBestMatchClient.invoke(address, address2, city, state, zip, taxType, licenseKey, isLive, timeoutSeconds);

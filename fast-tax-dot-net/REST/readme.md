@@ -26,17 +26,17 @@ If the MatchLevel returned is “Zip” then this operation can also return mult
 // 1. Build the input
 //
 //  Required fields:
+//               Address
+//               Address2
+//               State
+//               City
+//               Zip
+//               TaxType	
 //               LicenseKey
 //               IsLive
 // 
 // Optional:
-//        Address
-//        Address2
-//        State
-//        City
-//        Zip
-//        TaxType	
-//        TimeoutSeconds (default: 15)
+//        TimeoutSeconds
 
 using fast_tax_dot_net.REST;
 
@@ -48,7 +48,7 @@ GetBestMatchClient.GetBestMatchInput getBestMatchInput = new(
     Zip: "93101",
     TaxType: "sales",
     LicenseKey: licenseKey,
-    IsLive: isLive,
+    IsLive: true,
     TimeoutSeconds: 15
 );
 

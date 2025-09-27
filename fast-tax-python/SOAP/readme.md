@@ -26,27 +26,30 @@ If the MatchLevel returned is “Zip” then this operation can also return mult
 // 1. Build the input
 //
 //  Required fields:
-//               LicenseKey
-//               IsLive
+//               address
+//               address2
+//               state
+//               city
+//               zip
+//               tax_type
+//               license_key
+//               is_live
 // 
 // Optional:
-//        Address
-//        Address2
-//        State
-//        City
-//        Zip
-//        TaxType	
-//        TimeoutSeconds (default: 15)
+//        timeout_seconds
 
 from get_best_match_soap import GetBestMatchSoap
 
-address = "136 W Canon Perdido St Ste D"
+address = "27 E Cota St"
 address2 = ""
 city = "Santa Barbara"
 state = "CA"
 zip = "93101"
-taxType = "sales";
-timeoutSeconds = 15;
+tax_type = "sales"
+timeout_seconds = 15;
+is_live = False
+license_key = "YOUR LICENSE KEY"
+
 
 // 2. Call the method.
 service = GetBestMatchSoap(license_key, is_live, timeout_seconds * 1000)
